@@ -1,0 +1,10 @@
+A good rule of thumb is to make nothing in a class public unless absolutely necessary. As soon as you make something a public method, you've now committed your class to maintaining that interface because you don't want to break others' code. By making it a private method, you give yourself flexibility. You can always make a private method public later, but making a public method private is much more likely to break someone's code.
+
+Using a variable as a method name is illegal in many other OO languages, but Perl allows this, and it's handy because there are times when you might want to delay the decision about which method to call until runtime. Otherwise, the previous code may have had this:
+    If you have code like this:
+        my $method = 'genre';
+        print $self->$method;
+    That's equivalent to:
+        $self->genre;
+
+All objects inherit from UNIVERSAL class. UNIVERSAL class has 3 methods: isa() can() version(). All objects will have this by default.

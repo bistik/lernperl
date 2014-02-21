@@ -16,17 +16,17 @@ sub new {
 
 sub _initialize {
     my ( $self, $arg_for ) = @_;
-    my %arg_for = %$arg_for;
+    #my %arg_for = %$arg_for;
     my $class = ref $self;
     $self->{purchased_items} = [];
     $self->{money_spent} = 0;
-    my $name = delete $arg_for{name};
+    my $name = delete $arg_for->{name};
     unless ( defined $name ) {
         croak("$class requires a name to be set");
     }
-    $self->set_budget( delete $arg_for{budget} );
+    $self->set_budget( delete $arg_for->{budget} );
     $self->{attributes}{name} = $name;
-    if ( my $remaining = join ', ', keys %arg_for ) {
+    if ( my $remaining = join ', ', keys %$arg_for ) {
         croak("Unknown keys to $class\::new: $remaining");
     }
 }
