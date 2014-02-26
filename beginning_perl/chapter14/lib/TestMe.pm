@@ -22,7 +22,18 @@ sub order_date {
 
 sub unique {
     my @array = @_;
-    my %hash = map { $_ => 1 } @array;
+    my %seen;
+    my @unique;
+
+    foreach my $num ( @array ) {
+        next if $seen{$num}++;
+        push @unique => $num;
+    }
+    return @unique;
+}
+
+sub unique_random {
+    my %hash = map { $_ => 1 } @_;
     return keys %hash;
 }
 
