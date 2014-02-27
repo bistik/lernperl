@@ -1,6 +1,7 @@
 <html>
     <head><title>Parameters</title></head>
     <body>
+    <p>Hello [% username %]. You have [% time %] seconds left.</p>
 [% IF have_params %]
     <p>Our list of params:</p>
     <table rules="all">
