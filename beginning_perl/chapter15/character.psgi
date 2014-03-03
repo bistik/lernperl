@@ -64,6 +64,11 @@ sub generate_character {
             mars => { strength => -5, health => 2 },
             vat  => { intelligence => 2, health => -2 }
         },
+        education => {
+            combat => { strength => 2 },
+            medicine => { health => 2 },
+            engineering => { intelligence => 2 }
+        },
     );
 
     my @errors;
@@ -78,11 +83,16 @@ sub generate_character {
             mars => "Mars",
             vat => "Vat 3-5LX",
         },
+        education => {
+            combat => "Combat",
+            medicine => "Medicine",
+            engineering => "Engineering",
+        },
     );
 
     my %value_for = map { $_ => roll_dice() } qw/strength intelligence health/;
 
-    foreach my $attribute (qw/name profession birthplace/) {
+    foreach my $attribute (qw/name profession birthplace education/) {
         if ( my $value = $request->param($attribute) ) {
             if ( my $adj=$adjustments_for{$attribute}{$value} ) {
                 while ( my ($stat, $adjustment) = each %$adj) {

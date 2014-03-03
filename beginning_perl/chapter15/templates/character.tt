@@ -32,6 +32,16 @@
                         Vat 3-5LX <input type="radio" name="birthplace" value="vat" /> |
                     </td>
                 </tr>
+                <tr>
+                    <td>Education</td>
+                    <td>
+                        <select name="education">
+                            <option value="combat">Combat</option>
+                            <option value="medicine">Medicine</option>
+                            <option value="engineering">Engineering</option>
+                        </select>
+                    </td>
+                </tr>
             </table>
             <div align="center">
             <input type="submit" value="Submit" />

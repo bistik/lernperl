@@ -19,6 +19,8 @@
                 <td>[% character.profession %]</tr>
                 <tr><td>Birthplace</td>
                 <td>[% character.birthplace %]</tr>
+                <tr><td>Education</td>
+                <td>[% character.education %]</tr>
                 <tr><td>Strength</td>
                 <td>[% character.strength %]</tr>
                 <tr><td>Intelligence</td>
