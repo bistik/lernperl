@@ -8,7 +8,7 @@ use MyDatabase 'db_handle';
 
 my $dbh = db_handle('rights.db');
 my $sql_media_type = "INSERT INTO media_types (media_type) VALUES (?)";
-my $sth = $dbh->prepare($sql_media_type);
+my $sth = $dbh->prepare($sql_media_type); # sth - statement handle
 my %media_type_id_for;
 
 foreach my $type (qw/video audio image/) {
