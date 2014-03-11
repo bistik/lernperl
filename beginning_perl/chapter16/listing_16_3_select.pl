@@ -14,6 +14,10 @@ ORDER BY id ASC
 SQL
 $sth->execute;
 
-while ( my @row = $sth->fetchrow_array ) {
-    print "$row[0] - $row[1]\n";
+# while ( my @row = $sth->fetchrow_array ) {
+#    print "$row[0] - $row[1]\n";
+#}
+
+while ( my $row = $sth->fetchrow_hashref ) {
+    print "$row->{id} => $row->{media_type}\n";
 }
